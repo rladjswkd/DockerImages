@@ -1,5 +1,6 @@
 FROM	ubuntu:latest
-RUN		apt update && apt install -y npm git curl wget # npm과 함께 nodejs도 설치됨
-RUN		npm install -g typescript n
-RUN		n stable
+RUN		apt-get update && apt-get install -y git curl wget
+# https://github.com/nodesource/distributions 설명글 참고해서 nodejs 설치하기. 아래는 18 버전
+RUN		curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs
+RUN		npm install -g @nestjs/cli
 CMD		sleep infinity

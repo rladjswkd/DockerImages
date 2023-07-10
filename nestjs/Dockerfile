@@ -4,5 +4,5 @@ RUN		npm install -g @nestjs/cli
 # npm package manager로 application 프로젝트를 생성
 RUN		nest new application -p npm
 WORKDIR	/application
-RUN		npm install @nestjs/typeorm typeorm reflect-metadata pg
+RUN		npm install --save class-validator class-transformer @nestjs/typeorm typeorm reflect-metadata pg
 CMD		sleep infinity
